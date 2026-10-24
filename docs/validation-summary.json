@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-10-24",
+  "engine": "4.7.2-stable (official)",
+  "renderer": "forward_plus",
+  "physics_engine": "Jolt Physics",
+  "check_count": 92,
+  "passed_count": 92,
+  "failures": [],
+  "vfx_backend": "project_fallback",
+  "optional_pyrolux_included": false,
+  "automated_regression_only": true
+}

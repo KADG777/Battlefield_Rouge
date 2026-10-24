@@ -1,0 +1,857 @@
+{
+  "date": "2026-10-24",
+  "original_downloads": [
+    {
+      "name": "Majadroid 城市废墟",
+      "source_url": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "license": "CC0",
+      "bytes": 38420158,
+      "sha256": "4117bd1d2e815223762c1dbd53e80ee050f64ed7e2b4b43a2bc00ebf20b7df6b",
+      "upstream_file_name": "LowPoly-Apocalyptic-Buildings-By-Majadroid.zip",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Downtown City MegaKit Standard",
+      "source_url": "https://quaternius.itch.io/downtown-city-megakit",
+      "license": "CC0",
+      "bytes": 234753092,
+      "sha256": "5b1a945576d54cdbb4ccc9c3d52711e6d530da74c74c586407ecc28b165335da",
+      "upstream_file_name": "Downtown City MegaKit[Standard].zip",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Stein Classic Weapons v1.1",
+      "source_url": "https://stein-indie.itch.io/classic-weapons-pack",
+      "license": "CC0",
+      "bytes": 130441022,
+      "sha256": "e91fd8954226cf99f72bd27065e0ef1042675a96cd9b600d77c623c2f50e90c0",
+      "upstream_file_name": "Classic Weapons Pack v1.1.zip",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Godot Destruction Plugin v7.2",
+      "source_url": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "license": "MIT",
+      "bytes": 5165,
+      "sha256": "0c328b3024128c87bcfa66a600b444c7560613b3197aa3c2395717a5a289f1e1",
+      "upstream_file_name": "destruction.zip",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 1k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 781237,
+      "sha256": "a656a0692138c045c9707933cf0551559b316b817e90089abf12b6ba76e5e779",
+      "upstream_file_name": "rubble_diff_1k.jpg",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 1k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 6640822,
+      "sha256": "fd005713716c02c5a008dca34bf5edc128ef929bc372fcf95c6d136a4450b51e",
+      "upstream_file_name": "rubble_nor_gl_1k.png",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 1k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 380186,
+      "sha256": "b96f0bbfdde0bb9058e3e2a7566a852f0ce40b159835538bdbe3f6b565a19238",
+      "upstream_file_name": "rubble_rough_1k.jpg",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 2k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 3004880,
+      "sha256": "81a931b8cf6d448f030ea21cd2089dc492cd560ce0508e651c8d7c28dab23b91",
+      "upstream_file_name": "rubble_diff_2k.jpg",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 2k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 26212923,
+      "sha256": "37919108373da79d2e7a2a9d2f495878f2f8ea2521373deb877d0e0a792911e7",
+      "upstream_file_name": "rubble_nor_gl_2k.png",
+      "archive_or_optional_source_not_bundled": true
+    },
+    {
+      "name": "Poly Haven Rubble 2k",
+      "source_url": "https://polyhaven.com/a/rubble",
+      "license": "CC0-1.0",
+      "bytes": 1451231,
+      "sha256": "0aa465607f588db6cbafbe2b3cf949ae8331304b00df0466c29f29ec460194a7",
+      "upstream_file_name": "rubble_rough_2k.jpg",
+      "archive_or_optional_source_not_bundled": true
+    }
+  ],
+  "files": [
+    {
+      "file": "assets/city/Building_Large_2.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 3345228,
+      "sha256": "e25636464da7b96a346f89314e498099ce33d3b0e9b1f8d9cba3eee94b63fac3"
+    },
+    {
+      "file": "assets/city/Building_Large_2.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 22880,
+      "sha256": "903209b63ad4e151190dce32ccab47a2c0dc256c09d999835984a0459ef2bd91"
+    },
+    {
+      "file": "assets/city/Building_Medium_2_001.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2443288,
+      "sha256": "8a8bd4462ff5f784e0ea7fbe753b009713f4017192c9d82b467f445eae88a35d"
+    },
+    {
+      "file": "assets/city/Building_Medium_2_001.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 25244,
+      "sha256": "423f4b3e709ef5633eac4a94a8a1ce25750aa42fe34e3b983d7aac39846f9a1c"
+    },
+    {
+      "file": "assets/city/Building_Small_1.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1556100,
+      "sha256": "a5fb691fe7ab0d93d5d47eef51af576f2d65bd78103c92c9e714215b26d679a2"
+    },
+    {
+      "file": "assets/city/Building_Small_1.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 27435,
+      "sha256": "3c864724fffd016ca440191bca169d6ba486e14617bb3cafa09ddbac7532f3d7"
+    },
+    {
+      "file": "assets/city/License_Standard.txt",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 847,
+      "sha256": "afac5819301671301c41e90402d26e4ade5e459ad58fdf77f142147410862f1f"
+    },
+    {
+      "file": "assets/city/Prop_ACUnit.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 6256,
+      "sha256": "71c8dcc458ec8fa31ca7c3f391b1b95dc17864c6bb5c1addbdde899849c3324a"
+    },
+    {
+      "file": "assets/city/Prop_ACUnit.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2376,
+      "sha256": "f81fae2b49804312d23cc5c56fdf36f6bec89f342df9d135c1565ed31a7e968d"
+    },
+    {
+      "file": "assets/city/Prop_Bollard.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 10140,
+      "sha256": "53b7227fade437ae5066359170e88fbcb537f9e96773a6c1ad0fb2bcc0f92125"
+    },
+    {
+      "file": "assets/city/Prop_Bollard.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2394,
+      "sha256": "4a05291a05873e4043c6354c7cae969c0726fd9b4590625a24ee3bcf940a1c9a"
+    },
+    {
+      "file": "assets/city/Prop_ManholeCover.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4548,
+      "sha256": "de8edeb728cac5469eea1e6e3fed6fc0f4afe875d7c416ec14dc03886650daa7"
+    },
+    {
+      "file": "assets/city/Prop_ManholeCover.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2198,
+      "sha256": "c8519276b3628a217ec7ae0198e598868279046e329f9f6d16b3eec3e0aa2fc9"
+    },
+    {
+      "file": "assets/city/Prop_Planter_Single.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 9428,
+      "sha256": "9350eb1b2bf17f057c8d57b9a59de8dc0c4c0bf8ec3580bba13fc7d0f9016e91"
+    },
+    {
+      "file": "assets/city/Prop_Planter_Single.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4132,
+      "sha256": "5ab51700931236c2de45c9c8c5c1206ff312d56f00cedf134bfa462da4ef4f13"
+    },
+    {
+      "file": "assets/city/Sidewalk_Corner_Round_3m.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 8984,
+      "sha256": "dae8b8c25500ff0510a4dbd9623fb9f4be153e076d948c7f57eef998127e3eb7"
+    },
+    {
+      "file": "assets/city/Sidewalk_Corner_Round_3m.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2636,
+      "sha256": "099002b275669d77f610cd96c41613b1a3de19d8408df7be7d80827c83356f7f"
+    },
+    {
+      "file": "assets/city/Sidewalk_Straight_3m.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4296,
+      "sha256": "b160eeecdefe135d61edd91391bff8c3f60a40499b555d87b2ae4e1008527649"
+    },
+    {
+      "file": "assets/city/Sidewalk_Straight_3m.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2586,
+      "sha256": "ecfc8c7c7b802afd0a6171409d05abc887162c2030e9d012bc89549f33e76c5f"
+    },
+    {
+      "file": "assets/city/SOURCE.md",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1413,
+      "sha256": "401ec4aa183bee8cf3d2beb0e0a11fa1e0a96be56206d3bff9c3b784a0d0c444"
+    },
+    {
+      "file": "assets/city/Street_2Lane.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 15912,
+      "sha256": "f01d04eeb99a1bc486703e27f8f05e3976a73c08493b828ed9e680e68c6a6b43"
+    },
+    {
+      "file": "assets/city/Street_2Lane.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 6364,
+      "sha256": "4bfa763a0a1988276fd5604e8e9e1d401c31cf5438401d42a15cf3a7ec3a60fe"
+    },
+    {
+      "file": "assets/city/Street_4WayIntersection.bin",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 54360,
+      "sha256": "b26844243cf82d51f1106308b0bdbcf4c53ac7e1f093c7187e479c690712b193"
+    },
+    {
+      "file": "assets/city/Street_4WayIntersection.gltf",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 6432,
+      "sha256": "b332bf9afd47ec6ae1c19151f8eafccee3b45037f4dfff2f115001d9d4cac34e"
+    },
+    {
+      "file": "assets/city/T_Concrete_Asphalt_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 988093,
+      "sha256": "a37ca932c4287a67d9cf7f78997b5cc4b026ca7319a4c8454132d076307ca5cf"
+    },
+    {
+      "file": "assets/city/T_Concrete_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1341594,
+      "sha256": "697276f680b34d6321e6b06da208a0fc3516db372d4a7de543fc2c33e895f482"
+    },
+    {
+      "file": "assets/city/T_Concrete_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4416770,
+      "sha256": "e4de917d2506bff4b17d44380a136336cf16e5ea828edfdb8981f4f27e30a86a"
+    },
+    {
+      "file": "assets/city/T_Concrete_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 896797,
+      "sha256": "be17636c061a7c6c4f4bf23c3887a3f894da0e88394e233926e816c735a49244"
+    },
+    {
+      "file": "assets/city/T_dark_interior.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 325090,
+      "sha256": "59e5c77292953d93c3cd239c2f06d4e80e393761195da66d886d3887ad59f1dc"
+    },
+    {
+      "file": "assets/city/T_Dirt_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2003269,
+      "sha256": "bcb7b1d7bb9801aae25720f495af76306d11cce7654f52763e3cb6b273845302"
+    },
+    {
+      "file": "assets/city/T_Dirt_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 9650819,
+      "sha256": "88958149742c2ebf8447079edd80ac1133f7b72a5fce0c118206b2f742a350ea"
+    },
+    {
+      "file": "assets/city/T_Dirt_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1373373,
+      "sha256": "a2803d1ce2d6ccfdd0896de05a96e3c6aec898000c5897e1669c000faf2b2060"
+    },
+    {
+      "file": "assets/city/T_lit_interior_1.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 395226,
+      "sha256": "d20aa9f249a506eb145d76e264e59667cec4bef66c07e4baace6583a28cc3be4"
+    },
+    {
+      "file": "assets/city/T_lit_interior_2.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 316427,
+      "sha256": "83c3f1b2ad84b65aab88d5744e6997730a04140e41d230e2cecfe9bfb2ae0559"
+    },
+    {
+      "file": "assets/city/T_MarbleFloor_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1095714,
+      "sha256": "a01f57e2976d3af21a59f1ae18e12be84d2acae7ba3e93d184d2874224f737c0"
+    },
+    {
+      "file": "assets/city/T_MarbleFloor_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1382828,
+      "sha256": "52ba88ccfd35f072a51d11c31cdfb6e6ea8cde641ab4521115994d2c3216b451"
+    },
+    {
+      "file": "assets/city/T_MarbleFloor_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 567860,
+      "sha256": "95008e79cdba191b525afce2a95452fe28934efd5546d35919c24ea6cbcc0c22"
+    },
+    {
+      "file": "assets/city/T_MetalConcrete_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1488628,
+      "sha256": "adae656323f15cd2c3f1a6453685cb1ca104b700dc114076137cb3a4c253d3d0"
+    },
+    {
+      "file": "assets/city/T_MetalConcrete_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4815924,
+      "sha256": "93f95a96c32b27820c590301f00f5ba1d23d4054046d92bf6d58adbf23007419"
+    },
+    {
+      "file": "assets/city/T_MetalConcrete_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1857257,
+      "sha256": "c4d35f684d20c47f199bea2fbe098d60a000fa7d1489df0f00a4c3c1ace4fcb7"
+    },
+    {
+      "file": "assets/city/T_Ornaments_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4776648,
+      "sha256": "528cbe672c62384aa3bac703f574b60509bd69b4d492291cb2915022a12a449c"
+    },
+    {
+      "file": "assets/city/T_Ornaments_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 7172215,
+      "sha256": "c1aa6b307d47386b63e775ba88d82992dd0aaf34f1e4c2b7824002e3cc0a795a"
+    },
+    {
+      "file": "assets/city/T_Ornaments_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4548795,
+      "sha256": "c65b673f871e6b4b2fa61fd110286a096d05d9a311e71ca71804cea46811885d"
+    },
+    {
+      "file": "assets/city/T_RedBrick_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 1732063,
+      "sha256": "ea85bfc02c4c807265a85f7ab50656f7eaa19f6567301d362d78c1d06da161ab"
+    },
+    {
+      "file": "assets/city/T_RedBrick_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 7273659,
+      "sha256": "147f14d7f665d2598d0d796bd02a227f6b8b0fbc790c3e0737b1b90128101c93"
+    },
+    {
+      "file": "assets/city/T_RedBrick_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2346959,
+      "sha256": "dfba8a1da5ca7dcff1b707a051e82717e93013c2ad36c93b7a41b0f331414b70"
+    },
+    {
+      "file": "assets/city/T_Street_Decals.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2233893,
+      "sha256": "90eca7571c910f713952d7568674e231fd21bc6f6693de5514a563c19c91148e"
+    },
+    {
+      "file": "assets/city/T_Trim_BaseColor.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4421593,
+      "sha256": "c3334902f8315783477eec63e2d462f8cefedf9c55b41ef452d8374b5603f08e"
+    },
+    {
+      "file": "assets/city/T_Trim_Normal.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 4104873,
+      "sha256": "95fa43093067956fa6e206408f3e2f2302c18c7453b75a02f6e29fe57e2cd041"
+    },
+    {
+      "file": "assets/city/T_Trim_ORM.png",
+      "pack": "Downtown City MegaKit Standard",
+      "license": "CC0",
+      "source": "https://quaternius.itch.io/downtown-city-megakit",
+      "bytes": 2538116,
+      "sha256": "52449f201ad3cf606a2eb2972702b10051c369cdc67b6fadd109502b4735d7fb"
+    },
+    {
+      "file": "assets/ruins/building-01.fbx",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 2836556,
+      "sha256": "d6445ed15d6efc1fc2dd54d4e59eb5651e3bca02f6de73450a1aeb8ce1151ce6"
+    },
+    {
+      "file": "assets/ruins/building-01_0.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1278739,
+      "sha256": "a1fb9efdcc0e194b220e1b7d9c01a0eac6d9224304a6149a0d0368914e42cc32"
+    },
+    {
+      "file": "assets/ruins/building-01_1.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 654227,
+      "sha256": "f0e09c7e42df275ade9da9ec161a42ba80d41d407ad5f5a92854051fdcc1cf88"
+    },
+    {
+      "file": "assets/ruins/building-01_2.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1373025,
+      "sha256": "c350227d79cce4abaf52d63f07e34b37f774b9ff8c6777eb60bcb51c7e6c74a4"
+    },
+    {
+      "file": "assets/ruins/building-03.fbx",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 4323836,
+      "sha256": "04dcdf1d2b4509c65dd0dd201029bc034f921a325bdbf95a2e7cf10be362fe78"
+    },
+    {
+      "file": "assets/ruins/building-03_0.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1278739,
+      "sha256": "a1fb9efdcc0e194b220e1b7d9c01a0eac6d9224304a6149a0d0368914e42cc32"
+    },
+    {
+      "file": "assets/ruins/building-03_1.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 654227,
+      "sha256": "f0e09c7e42df275ade9da9ec161a42ba80d41d407ad5f5a92854051fdcc1cf88"
+    },
+    {
+      "file": "assets/ruins/building-03_2.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1373025,
+      "sha256": "c350227d79cce4abaf52d63f07e34b37f774b9ff8c6777eb60bcb51c7e6c74a4"
+    },
+    {
+      "file": "assets/ruins/building-03_3.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1042192,
+      "sha256": "a24c82b042c6ddb90e6480404ab497e02b0bb43b17cf7ad5226376502420b5bc"
+    },
+    {
+      "file": "assets/ruins/building-05.fbx",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 3835452,
+      "sha256": "9fc356b0559f36e7eeff5d8305fb297710aafab9dbbfdf70f430d7ee6c09153a"
+    },
+    {
+      "file": "assets/ruins/building-05_0.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 2355996,
+      "sha256": "d0fe367bfbd0617a6e831c8858cb14cd89f0298823294e45160a007ff3db5007"
+    },
+    {
+      "file": "assets/ruins/building-05_1.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 654227,
+      "sha256": "f0e09c7e42df275ade9da9ec161a42ba80d41d407ad5f5a92854051fdcc1cf88"
+    },
+    {
+      "file": "assets/ruins/building-05_2.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1373025,
+      "sha256": "c350227d79cce4abaf52d63f07e34b37f774b9ff8c6777eb60bcb51c7e6c74a4"
+    },
+    {
+      "file": "assets/ruins/building-07.fbx",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 2709388,
+      "sha256": "a57ee14661a03e739fc3265c8b9a64822ebf6eb8b39f02cf6873dac361230647"
+    },
+    {
+      "file": "assets/ruins/building-07_0.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1278739,
+      "sha256": "a1fb9efdcc0e194b220e1b7d9c01a0eac6d9224304a6149a0d0368914e42cc32"
+    },
+    {
+      "file": "assets/ruins/building-07_1.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 654227,
+      "sha256": "f0e09c7e42df275ade9da9ec161a42ba80d41d407ad5f5a92854051fdcc1cf88"
+    },
+    {
+      "file": "assets/ruins/building-07_2.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1373025,
+      "sha256": "c350227d79cce4abaf52d63f07e34b37f774b9ff8c6777eb60bcb51c7e6c74a4"
+    },
+    {
+      "file": "assets/ruins/INFO.txt",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 868,
+      "sha256": "bc458a42b0c280192d2a1ca6e78603c0d18183f220d741141bc8882123e8f670"
+    },
+    {
+      "file": "assets/ruins/SOURCE.md",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 956,
+      "sha256": "7e43cb44de1d3ae3b90bd214ccb9ad288dd271d4830e1940c18ef62523972463"
+    },
+    {
+      "file": "assets/ruins/textures/billboards-texture-1024.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 975076,
+      "sha256": "5e15f1025cc5360718bb4c11e96cc06605358677ae9d902e83cd16d7b35327cb"
+    },
+    {
+      "file": "assets/ruins/textures/Concrete026_1K_Color.jpg",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1855873,
+      "sha256": "b1cd9a0798fb7418f67e807de3a119395e12bbc1f439e0bf983d0297ed209986"
+    },
+    {
+      "file": "assets/ruins/textures/Concrete031_1K_Color.jpg",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 806910,
+      "sha256": "0d8539298bdd79a9ec33f3da916edda14d9236878bf755a695be63694601388a"
+    },
+    {
+      "file": "assets/ruins/textures/Facade001_1K_Color.jpg",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 474791,
+      "sha256": "706925d6ec12268bbb47babd3f903035a6cc72ffb75b7d1bfb57a8d4bf97a66f"
+    },
+    {
+      "file": "assets/ruins/textures/info.txt",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 227,
+      "sha256": "e8915ef5b34c44d826e78235491a5eb80a0838fc5657a17b51bdc58c012f2c2c"
+    },
+    {
+      "file": "assets/ruins/textures/Rocks007_1K_Color.jpg",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1109961,
+      "sha256": "9a8281b9ac6e298d707abdb422402d5d0c2b1fef721f8f20cc65d17ac3fc0822"
+    },
+    {
+      "file": "assets/ruins/textures/Rust006_1K_Color.jpg",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1111673,
+      "sha256": "e791c557da60c9f2d7c1becc93d4659ff5c347888254cda2abf6a314d39a66f8"
+    },
+    {
+      "file": "assets/ruins/wreckage-3-types.fbx",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1142844,
+      "sha256": "cfa3269ef983212cb02281d88a56b64f66e85fec45d8d8079f6ca7fc68a362b1"
+    },
+    {
+      "file": "assets/ruins/wreckage-3-types_0.png",
+      "pack": "Majadroid Apocalyptic Buildings",
+      "license": "CC0",
+      "source": "https://majadroid.itch.io/3d-apocalyptic-building-city-cc0",
+      "bytes": 1641147,
+      "sha256": "509d39d0c7d9b5014df7417227c02d7ed70048ede392c462668d4fa99e9adbbb"
+    },
+    {
+      "file": "assets/rubble/rubble_diff_1k.jpg",
+      "pack": "Poly Haven Rubble",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rubble",
+      "bytes": 781237,
+      "sha256": "a656a0692138c045c9707933cf0551559b316b817e90089abf12b6ba76e5e779"
+    },
+    {
+      "file": "assets/rubble/rubble_nor_gl_1k.png",
+      "pack": "Poly Haven Rubble",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rubble",
+      "bytes": 6640822,
+      "sha256": "fd005713716c02c5a008dca34bf5edc128ef929bc372fcf95c6d136a4450b51e"
+    },
+    {
+      "file": "assets/rubble/rubble_rough_1k.jpg",
+      "pack": "Poly Haven Rubble",
+      "license": "CC0-1.0",
+      "source": "https://polyhaven.com/a/rubble",
+      "bytes": 380186,
+      "sha256": "b96f0bbfdde0bb9058e3e2a7566a852f0ce40b159835538bdbe3f6b565a19238"
+    },
+    {
+      "file": "assets/weapons/AK47/LICENSE.txt",
+      "pack": "Stein Classic Weapons v1.1",
+      "license": "CC0",
+      "source": "https://stein-indie.itch.io/classic-weapons-pack",
+      "bytes": 229,
+      "sha256": "e951f2b0020950145353d5d30354625ff2b1de12337c4695c2aaf1f8d30cef98"
+    },
+    {
+      "file": "assets/weapons/AK47/SKM_AK47.fbx",
+      "pack": "Stein Classic Weapons v1.1",
+      "license": "CC0",
+      "source": "https://stein-indie.itch.io/classic-weapons-pack",
+      "bytes": 865420,
+      "sha256": "b477a963e34173eee5814c731416926386305cdb2caacfd5ce6310eadc26b34f"
+    },
+    {
+      "file": "assets/weapons/AK47/T_AK47_C.png",
+      "pack": "Stein Classic Weapons v1.1",
+      "license": "CC0",
+      "source": "https://stein-indie.itch.io/classic-weapons-pack",
+      "bytes": 6436445,
+      "sha256": "2b1d7dd605e799f395e1b16971d3d3f87f8ba0c064b7640d47cf4fa093117ae2"
+    },
+    {
+      "file": "assets/weapons/AK47/T_AK47_N.png",
+      "pack": "Stein Classic Weapons v1.1",
+      "license": "CC0",
+      "source": "https://stein-indie.itch.io/classic-weapons-pack",
+      "bytes": 6110389,
+      "sha256": "9022f2c3b43102ba3a9ec572b6a343762bedc8c6ed173003814a940a7c693dd1"
+    },
+    {
+      "file": "assets/weapons/AK47/T_AK47_RMAO.png",
+      "pack": "Stein Classic Weapons v1.1",
+      "license": "CC0",
+      "source": "https://stein-indie.itch.io/classic-weapons-pack",
+      "bytes": 3525646,
+      "sha256": "57ccf839b2bad454c6c44f8cd3ee720c5553c9c3b3b51252365f9a797c650b0f"
+    },
+    {
+      "file": "addons/destruction/destruction.gd",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 4770,
+      "sha256": "59c4d790ad5f8687324d0654898c2f28715294f0e197dae621c88f639c7111c4"
+    },
+    {
+      "file": "addons/destruction/destruction_icon.svg",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 3381,
+      "sha256": "d56068b44f8ce2123c29ce6f61e0a04893757d276029de2fca976edc1880cbbd"
+    },
+    {
+      "file": "addons/destruction/destruction_icon.svg.license",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 99,
+      "sha256": "2e753534cb82f459d35f3e6a389f3eeb10231faca59da6563d64da328dc2d0c6"
+    },
+    {
+      "file": "addons/destruction/LICENSE-CC0-1.0.txt",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 6952,
+      "sha256": "f7b87b0309aa1ae9201293eaf75dd63dc928330b5d5e13d425a8bc031eedcfbb"
+    },
+    {
+      "file": "addons/destruction/LICENSE-MIT.txt",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 1078,
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+    },
+    {
+      "file": "addons/destruction/LOCAL_CHANGES.md",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 1580,
+      "sha256": "4400a94a9508b821e4feaa9d5214de6c0febc94cae6bf049c05345c6b124c9b2"
+    },
+    {
+      "file": "addons/destruction/plugin.cfg",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 184,
+      "sha256": "c2f86f59225f120d3e9cbd7d0ee169f3eb029eebaf35efed192b98d9589c3395"
+    },
+    {
+      "file": "addons/destruction/plugin.gd",
+      "pack": "Godot Destruction Plugin v7.2 adapted",
+      "license": "MIT",
+      "source": "https://github.com/Jummit/godot-destruction-plugin/releases/tag/v7.2",
+      "bytes": 99,
+      "sha256": "1db948375959e40ea00b7b8920cdb1cf45f21a0fd91d48d6f04cbafcc2dd61e3"
+    }
+  ],
+  "scope": "Public repository selected third-party files; original download archives are not distributed.",
+  "optional_not_distributed": [
+    {
+      "name": "PYROLUX Lite",
+      "source_url": "https://gennai.itch.io/pyrolux-lite",
+      "license": "Author custom license; obtain separately from the original author. Raw addon is not distributed in this repository."
+    }
+  ]
+}

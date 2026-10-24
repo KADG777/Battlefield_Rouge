@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://buffs/buff.gd" id="1_buff"]
+
+[resource]
+script = ExtResource("1_buff")
+title = "快速扳机"
+description = "射速 +25%"
+stat = &"fire_rate"
+add = 0.0
+mul = 1.25

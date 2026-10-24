@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://actors/player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://components/stats.gd" id="2_stats"]
+[ext_resource type="Script" path="res://components/health.gd" id="3_health"]
+[ext_resource type="Script" path="res://components/hitbox.gd" id="4_hitbox"]
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="5_weapon"]
+[ext_resource type="Resource" path="res://weapons/rifle.tres" id="6_rifle"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.35
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_player")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("2_stats")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("stats")]
+script = ExtResource("3_health")
+team = 0
+stats = NodePath("../Stats")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Hitbox" type="StaticBody3D" parent="."]
+script = ExtResource("4_hitbox")
+
+[node name="Shape" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+fov = 75.0
+
+[node name="Weapon" type="Node3D" parent="Head/Camera3D" node_paths=PackedStringArray("stats", "camera", "shooter")]
+script = ExtResource("5_weapon")
+data = ExtResource("6_rifle")
+stats = NodePath("../../../Stats")
+camera = NodePath("..")
+shooter = NodePath("../../..")

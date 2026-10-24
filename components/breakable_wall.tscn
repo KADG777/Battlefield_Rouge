@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://components/breakable.gd" id="1_breakable"]
+
+[node name="BreakableWall" type="StaticBody3D"]
+script = ExtResource("1_breakable")
+prop_kind = "wall"
+max_health = 100.0

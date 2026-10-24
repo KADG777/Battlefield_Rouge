@@ -1,0 +1,21 @@
+# Godot 4
+.godot/
+/android/
+*.tmp
+export_presets.cfg
+.DS_Store
+Thumbs.db
+
+# Download archives stay outside the project.
+*.zip
+# PYROLUX author license: local game use, no standalone/template redistribution.
+addons/pyrolux_fx/
+# Native verification captures and logs are local review output.
+verification/
+
+# Local runtime output and temporary files.
+*.log
+userdata/
+tmp/
+__pycache__/
+*.pyc

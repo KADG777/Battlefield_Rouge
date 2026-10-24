@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://weapons/viewmodels/rifle_view.gd" id="1_ak"]
+[ext_resource type="Texture2D" path="res://assets/vfx/muzzle.png" id="2_flash"]
+
+[sub_resource type="StandardMaterial3D" id="Mat_flash"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.75, 0.4, 1)
+albedo_texture = ExtResource("2_flash")
+billboard_mode = 1
+
+[node name="RifleView" type="Node3D"]
+script = ExtResource("1_ak")
+
+[node name="Muzzle" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, -0.66)
+
+[node name="Flash" type="Sprite3D" parent="Muzzle"]
+visible = false
+cast_shadow = 0
+pixel_size = 0.0004
+material_override = SubResource("Mat_flash")
+texture = ExtResource("2_flash")
+
+[node name="Light" type="OmniLight3D" parent="Muzzle/Flash"]
+light_color = Color(1, 0.75, 0.4, 1)
+light_energy = 2.0
+omni_range = 4.0

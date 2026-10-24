@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Buff" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://buffs/buff.gd" id="1_buff"]
+
+[resource]
+script = ExtResource("1_buff")
+title = "野战护甲"
+description = "最大生命值 +30"
+stat = &"max_health"
+add = 30.0
+mul = 1.0

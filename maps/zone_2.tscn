@@ -1,0 +1,534 @@
+[gd_scene load_steps=52 format=3]
+
+[ext_resource type="PackedScene" path="res://actors/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://actors/enemy/enemy.tscn" id="2_enemy"]
+[ext_resource type="PackedScene" path="res://ui/hud.tscn" id="3_hud"]
+[ext_resource type="Script" path="res://zone/zone_director.gd" id="4_director"]
+[ext_resource type="Script" path="res://zone/cover_point.gd" id="5_cover"]
+[ext_resource type="Script" path="res://zone/capture_point.gd" id="6_capture"]
+[ext_resource type="Script" path="res://zone/city_dressing.gd" id="7_city"]
+[ext_resource type="Texture2D" path="res://assets/city/T_Concrete_Asphalt_BaseColor.png" id="8_asphalt"]
+[ext_resource type="Texture2D" path="res://assets/rubble/rubble_diff_1k.jpg" id="9_rubble"]
+[ext_resource type="Texture2D" path="res://assets/rubble/rubble_nor_gl_1k.png" id="10_normal"]
+[ext_resource type="Texture2D" path="res://assets/rubble/rubble_rough_1k.jpg" id="11_rough"]
+
+[sub_resource type="ProceduralSkyMaterial" id="Sky_mat"]
+sky_top_color = Color(0.18, 0.31, 0.43, 1)
+sky_horizon_color = Color(0.68, 0.66, 0.58, 1)
+ground_horizon_color = Color(0.59, 0.56, 0.49, 1)
+
+[sub_resource type="Sky" id="Sky_sky"]
+sky_material = SubResource("Sky_mat")
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky_sky")
+ambient_light_source = 3
+ambient_light_energy = 0.42
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.60, 0.62, 0.62, 1)
+fog_light_energy = 0.5
+fog_density = 0.003
+
+[sub_resource type="StandardMaterial3D" id="Mat_grey"]
+albedo_color = Color(0.6, 0.55, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_asphalt"]
+albedo_texture = ExtResource("8_asphalt")
+roughness = 0.96
+uv1_scale = Vector3(12, 12, 12)
+
+[sub_resource type="StandardMaterial3D" id="Mat_concrete"]
+albedo_texture = ExtResource("9_rubble")
+normal_enabled = true
+normal_texture = ExtResource("10_normal")
+roughness_texture = ExtResource("11_rough")
+roughness_texture_channel = 0
+uv1_scale = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="Mat_cover"]
+albedo_color = Color(0.30, 0.34, 0.29, 1)
+roughness = 0.88
+
+[sub_resource type="NavigationMesh" id="NavMesh"]
+geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"navigation_geometry"
+cell_size = 0.25
+cell_height = 0.25
+agent_height = 1.75
+agent_radius = 0.5
+agent_max_climb = 0.25
+
+[sub_resource type="CylinderShape3D" id="Shape_capture"]
+height = 3.0
+radius = 4.0
+
+[sub_resource type="CylinderMesh" id="Mesh_capture"]
+top_radius = 4.0
+bottom_radius = 4.0
+height = 0.1
+
+[sub_resource type="BoxMesh" id="Mesh_0"]
+material = SubResource("Mat_asphalt")
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxShape3D" id="Shape_0"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxMesh" id="Mesh_1"]
+material = SubResource("Mat_concrete")
+size = Vector3(60, 2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_1"]
+size = Vector3(60, 2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_2"]
+material = SubResource("Mat_concrete")
+size = Vector3(60, 2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_2"]
+size = Vector3(60, 2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_3"]
+material = SubResource("Mat_concrete")
+size = Vector3(1, 2, 60)
+
+[sub_resource type="BoxShape3D" id="Shape_3"]
+size = Vector3(1, 2, 60)
+
+[sub_resource type="BoxMesh" id="Mesh_4"]
+material = SubResource("Mat_concrete")
+size = Vector3(1, 2, 60)
+
+[sub_resource type="BoxShape3D" id="Shape_4"]
+size = Vector3(1, 2, 60)
+
+[sub_resource type="BoxMesh" id="Mesh_5"]
+material = SubResource("Mat_cover")
+size = Vector3(4, 1.2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_5"]
+size = Vector3(4, 1.2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_6"]
+material = SubResource("Mat_cover")
+size = Vector3(4, 1.2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_6"]
+size = Vector3(4, 1.2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_7"]
+material = SubResource("Mat_cover")
+size = Vector3(1, 2.5, 6)
+
+[sub_resource type="BoxShape3D" id="Shape_7"]
+size = Vector3(1, 2.5, 6)
+
+[sub_resource type="BoxMesh" id="Mesh_8"]
+material = SubResource("Mat_cover")
+size = Vector3(6, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_8"]
+size = Vector3(6, 2.5, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_9"]
+material = SubResource("Mat_cover")
+size = Vector3(6, 2.5, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_9"]
+size = Vector3(6, 2.5, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_10"]
+material = SubResource("Mat_cover")
+size = Vector3(3, 1.2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_10"]
+size = Vector3(3, 1.2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_11"]
+material = SubResource("Mat_cover")
+size = Vector3(3, 1.2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_11"]
+size = Vector3(3, 1.2, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_12"]
+material = SubResource("Mat_cover")
+size = Vector3(2, 2.5, 2)
+
+[sub_resource type="BoxShape3D" id="Shape_12"]
+size = Vector3(2, 2.5, 2)
+
+[sub_resource type="BoxMesh" id="Mesh_13"]
+material = SubResource("Mat_cover")
+size = Vector3(2, 2.5, 2)
+
+[sub_resource type="BoxShape3D" id="Shape_13"]
+size = Vector3(2, 2.5, 2)
+
+[sub_resource type="BoxMesh" id="Mesh_14"]
+material = SubResource("Mat_cover")
+size = Vector3(5, 1.2, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_14"]
+size = Vector3(5, 1.2, 1)
+
+[node name="Zone2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 10, 0)
+light_color = Color(1, 0.86, 0.69, 1)
+light_energy = 0.85
+shadow_enabled = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavMesh")
+
+[node name="Geometry" type="Node3D" parent="." groups=["navigation_geometry"]]
+
+[node name="Floor" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Floor"]
+mesh = SubResource("Mesh_0")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Floor"]
+shape = SubResource("Shape_0")
+
+[node name="WallN" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/WallN"]
+mesh = SubResource("Mesh_1")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/WallN"]
+shape = SubResource("Shape_1")
+
+[node name="WallS" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/WallS"]
+mesh = SubResource("Mesh_2")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/WallS"]
+shape = SubResource("Shape_2")
+
+[node name="WallE" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/WallE"]
+mesh = SubResource("Mesh_3")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/WallE"]
+shape = SubResource("Shape_3")
+
+[node name="WallW" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/WallW"]
+mesh = SubResource("Mesh_4")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/WallW"]
+shape = SubResource("Shape_4")
+
+[node name="Cover1" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.6, 13)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover1"]
+mesh = SubResource("Mesh_5")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover1"]
+shape = SubResource("Shape_5")
+
+[node name="Cover2" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.6, 13)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover2"]
+mesh = SubResource("Mesh_6")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover2"]
+shape = SubResource("Shape_6")
+
+[node name="Cover3" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 4)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover3"]
+mesh = SubResource("Mesh_7")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover3"]
+shape = SubResource("Shape_7")
+
+[node name="Cover4" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.25, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover4"]
+mesh = SubResource("Mesh_8")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover4"]
+shape = SubResource("Shape_8")
+
+[node name="Cover5" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.25, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover5"]
+mesh = SubResource("Mesh_9")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover5"]
+shape = SubResource("Shape_9")
+
+[node name="Cover6" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.6, -6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover6"]
+mesh = SubResource("Mesh_10")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover6"]
+shape = SubResource("Shape_10")
+
+[node name="Cover7" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.6, -6)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover7"]
+mesh = SubResource("Mesh_11")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover7"]
+shape = SubResource("Shape_11")
+
+[node name="Cover8" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.25, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover8"]
+mesh = SubResource("Mesh_12")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover8"]
+shape = SubResource("Shape_12")
+
+[node name="Cover9" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.25, -14)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover9"]
+mesh = SubResource("Mesh_13")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover9"]
+shape = SubResource("Shape_13")
+
+[node name="Cover10" type="StaticBody3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -15)
+
+[node name="Mesh" type="MeshInstance3D" parent="Geometry/Cover10"]
+mesh = SubResource("Mesh_14")
+
+[node name="Shape" type="CollisionShape3D" parent="Geometry/Cover10"]
+shape = SubResource("Shape_14")
+
+[node name="CityDressing" type="Node3D" parent="."]
+script = ExtResource("7_city")
+district = 1
+
+[node name="CoverPoints" type="Node3D" parent="."]
+
+[node name="Cover01" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0, 13)
+script = ExtResource("5_cover")
+
+[node name="Cover02" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6, 0, 13)
+script = ExtResource("5_cover")
+
+[node name="Cover03" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 14.1)
+script = ExtResource("5_cover")
+
+[node name="Cover04" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 11.9)
+script = ExtResource("5_cover")
+
+[node name="Cover05" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6, 0, 13)
+script = ExtResource("5_cover")
+
+[node name="Cover06" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4, 0, 13)
+script = ExtResource("5_cover")
+
+[node name="Cover07" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 14.1)
+script = ExtResource("5_cover")
+
+[node name="Cover08" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11.9)
+script = ExtResource("5_cover")
+
+[node name="Cover09" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0, 4)
+script = ExtResource("5_cover")
+
+[node name="Cover10" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 4)
+script = ExtResource("5_cover")
+
+[node name="Cover11" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.6)
+script = ExtResource("5_cover")
+
+[node name="Cover12" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+script = ExtResource("5_cover")
+
+[node name="Cover13" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4, 0, 0)
+script = ExtResource("5_cover")
+
+[node name="Cover14" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 0, 0)
+script = ExtResource("5_cover")
+
+[node name="Cover15" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 1.1)
+script = ExtResource("5_cover")
+
+[node name="Cover16" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -1.1)
+script = ExtResource("5_cover")
+
+[node name="Cover17" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6, 0, 0)
+script = ExtResource("5_cover")
+
+[node name="Cover18" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4, 0, 0)
+script = ExtResource("5_cover")
+
+[node name="Cover19" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1.1)
+script = ExtResource("5_cover")
+
+[node name="Cover20" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -1.1)
+script = ExtResource("5_cover")
+
+[node name="Cover21" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, -6)
+script = ExtResource("5_cover")
+
+[node name="Cover22" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, 0, -6)
+script = ExtResource("5_cover")
+
+[node name="Cover23" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4.9)
+script = ExtResource("5_cover")
+
+[node name="Cover24" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7.1)
+script = ExtResource("5_cover")
+
+[node name="Cover25" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, 0, -6)
+script = ExtResource("5_cover")
+
+[node name="Cover26" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0, -6)
+script = ExtResource("5_cover")
+
+[node name="Cover27" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4.9)
+script = ExtResource("5_cover")
+
+[node name="Cover28" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7.1)
+script = ExtResource("5_cover")
+
+[node name="Cover29" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, -14)
+script = ExtResource("5_cover")
+
+[node name="Cover30" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 0, -14)
+script = ExtResource("5_cover")
+
+[node name="Cover31" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -12.4)
+script = ExtResource("5_cover")
+
+[node name="Cover32" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15.6)
+script = ExtResource("5_cover")
+
+[node name="Cover33" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 0, -14)
+script = ExtResource("5_cover")
+
+[node name="Cover34" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4, 0, -14)
+script = ExtResource("5_cover")
+
+[node name="Cover35" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12.4)
+script = ExtResource("5_cover")
+
+[node name="Cover36" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15.6)
+script = ExtResource("5_cover")
+
+[node name="Cover37" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1, 0, -15)
+script = ExtResource("5_cover")
+
+[node name="Cover38" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1, 0, -15)
+script = ExtResource("5_cover")
+
+[node name="Cover39" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.9)
+script = ExtResource("5_cover")
+
+[node name="Cover40" type="Marker3D" parent="CoverPoints" groups=["cover_point"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16.1)
+script = ExtResource("5_cover")
+
+[node name="CapturePoint" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21)
+script = ExtResource("6_capture")
+
+[node name="Shape" type="CollisionShape3D" parent="CapturePoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("Shape_capture")
+
+[node name="Mesh" type="MeshInstance3D" parent="CapturePoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("Mesh_capture")
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="Enemy1" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -12, 0, -22)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 12, 0, -22)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -4, 0, -25)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 4, 0, -25)
+
+[node name="Enemy5" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -14, 0, -8)
+
+[node name="Enemy6" parent="." instance=ExtResource("2_enemy")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 14, 0, -8)
+
+[node name="ZoneDirector" type="Node" parent="." node_paths=PackedStringArray("navigation_region", "capture_point")]
+script = ExtResource("4_director")
+navigation_region = NodePath("../NavigationRegion3D")
+capture_point = NodePath("../CapturePoint")
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]

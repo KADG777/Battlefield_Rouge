@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://weapons/weapon_data.gd" id="1_data"]
+[ext_resource type="PackedScene" path="res://weapons/viewmodels/rifle_view.tscn" id="2_view"]
+
+[resource]
+script = ExtResource("1_data")
+display_name = "突击步枪"
+view_scene = ExtResource("2_view")
+gunshot_sound = "gunshot_ak47"
+fire_mode = 0
+fire_interval = 0.1
+damage = 42.0
+max_range = 350.0
+falloff_start = 60.0
+falloff_end = 260.0
+min_damage_scale = 0.55
+hip_spread = 1.4
+ads_spread = 0.45
+spread_per_shot = 0.35
+spread_recovery = 4.0
+max_spread = 4.0
+move_spread_scale = 1.4
+airborne_spread_scale = 2.6
+camera_kick = 0.32
+recoil_pattern = Array[float]([-0.15, 0.3, 0.55, 0.7, 0.4, -0.1, -0.55, -0.75, -0.35, 0.25])
+recoil_manual = 0.7
+magazine_size = 30
+reserve_ammo = 120
+reload_time_tactical = 2.1
+reload_time_empty = 2.6
+ads_fov = 54.0
+ads_move_scale = 0.55
+hip_position = Vector3(0.16, -0.17, -0.32)
+ads_position = Vector3(0.0084, -0.1058, -0.3)

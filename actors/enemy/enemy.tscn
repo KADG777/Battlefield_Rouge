@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://actors/enemy/enemy.gd" id="1_enemy"]
+[ext_resource type="PackedScene" path="res://assets/models/characters/enemy.gltf" id="2_model"]
+[ext_resource type="Script" path="res://components/health.gd" id="3_health"]
+[ext_resource type="Script" path="res://components/hitbox.gd" id="4_hitbox"]
+
+[sub_resource type="CapsuleShape3D" id="Shape_collision"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="Shape_head"]
+radius = 0.3
+
+[sub_resource type="CapsuleShape3D" id="Shape_torso"]
+radius = 0.28
+height = 1.0
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_enemy")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_health")
+max_health = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("Shape_collision")
+
+[node name="Model" parent="." instance=ExtResource("2_model")]
+transform = Transform3D(-0.8, 0, 0, 0, 0.8, 0, 0, 0, -0.8, 0, 0, 0)
+
+[node name="HeadAttach" type="BoneAttachment3D" parent="Model/CharacterArmature/Skeleton3D"]
+bone_name = "Head"
+
+[node name="HeadHitbox" type="StaticBody3D" parent="Model/CharacterArmature/Skeleton3D/HeadAttach"]
+transform = Transform3D(1, 0, 0.0006, 0, 0.9999, -0.0169, -0.0006, 0.0169, 0.9999, 0.0006, 0.3446, -0.0781)
+script = ExtResource("4_hitbox")
+body_part = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Model/CharacterArmature/Skeleton3D/HeadAttach/HeadHitbox"]
+shape = SubResource("Shape_head")
+
+[node name="TorsoAttach" type="BoneAttachment3D" parent="Model/CharacterArmature/Skeleton3D"]
+bone_name = "Torso"
+
+[node name="TorsoHitbox" type="StaticBody3D" parent="Model/CharacterArmature/Skeleton3D/TorsoAttach"]
+transform = Transform3D(1, 0, 0, 0, 0.971, 0.2392, 0, -0.2392, 0.971, 0.0006, 0.0037, -0.0114)
+script = ExtResource("4_hitbox")
+
+[node name="Shape" type="CollisionShape3D" parent="Model/CharacterArmature/Skeleton3D/TorsoAttach/TorsoHitbox"]
+shape = SubResource("Shape_torso")
+
+[node name="Agent" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.6
+target_desired_distance = 0.6
+radius = 0.5
+height = 1.75
+
+[node name="GunAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+unit_size = 8.0
+max_polyphony = 3
